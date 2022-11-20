@@ -60,5 +60,10 @@ namespace API.Data
                 .ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
                 .SingleOrDefaultAsync();
         }
+
+        public void Update(AppUser user)
+        {
+            _context.Entry(user).State = EntityState.Modified;
+        }
     }
 }
